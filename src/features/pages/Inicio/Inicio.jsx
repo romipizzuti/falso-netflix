@@ -1,5 +1,7 @@
-import { useFetch, TMDBServices } from "commons/services"
-import { Carrousel } from "features";
+import { useFetch, TMDBServices } from "commons/services";
+import { Carrousel, Peliculas } from "features";
+import SwipImages_peliculas, { SwipImages } from "features/SwipImages/SwipImages_peliculas";
+import { SwipImages_series } from "features/SwipImages/SwipImages_series";
 
 export const Inicio = () => {
   const {
@@ -17,8 +19,10 @@ export const Inicio = () => {
 
   return <>
   <div className="container m-0 p-0">
-    <Carrousel data={dataSeries} isLoading={isLoadingSeries}/>
-    <Carrousel data={dataMovies} isLoading={isLoadingMovies}/>
+    {/* <Carrousel data={dataSeries} isLoading={isLoadingSeries}/>
+    <Carrousel data={dataMovies} isLoading={isLoadingMovies}/> */}
+    <SwipImages_peliculas />
+    <SwipImages_series />
   </div>
   </>;
 
